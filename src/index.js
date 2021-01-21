@@ -19,6 +19,12 @@ const httpLink = createHttpLink({
 
 const cache = new InMemoryCache();
 
+cache.writeData({
+  data: {
+    cartHidden: true,
+  },
+});
+
 const apolloClient = new ApolloClient({
   link: httpLink,
   cache,
